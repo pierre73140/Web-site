@@ -1,0 +1,274 @@
+/*================================================
+======= Eléments principaux de la page  ==========
+================================================*/
+
+/* Crée par BAZIRE Tanguy developpeur web front-end freelance
+la reproduction de cette œuvre s'analysera au sens de l'article L122-3 du 
+Code de la propriété intellectuelle */
+
+@font-face {
+    font-family: 'alex_brush';
+    src: url('polices/alexbrush-webfont.eot');
+    src: url('polices/alexbrush-webfont.eot?#iefix') format('embedded-opentype'),
+         url('polices/alexbrush-webfont.woff') format('woff'),
+         url('polices/alexbrush-webfont.ttf') format('truetype'),
+         url('polices/alexbrush-webfont.svg#alex_brushregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background: #002319 url("../images/fond-2.jpg") center top no-repeat;
+    font-family: 'Comic Sans MS', Arial, sans-serif;
+    margin: 0px; 
+}
+
+/*================================================
+==================== Header ======================
+================================================*/
+
+header {
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 10px 5px 15px black;
+    width: 100%;
+    
+    position: fixed;
+    top: 0px; z-index: 100;
+
+    font-family: 'alex_brush', serif;
+    font-size: 1.5em;
+    color: white;
+}
+
+header > .main {
+    display: flex;
+    justify-content: center;
+    height: 100px;
+}
+
+header > .second {
+    background-color: rgb(100, 0, 0);
+    border-bottom: 5px solid rgb(255, 217, 68);
+    box-shadow: 10px 5px 15px black;
+    padding: 0 10px 0 10px;
+    
+    display: flex;
+    justify-content: space-between;
+}
+
+@media all and (max-width: 750px) {
+    header > .second { display: none; }
+    /*A corriger !*/
+    #logo { display: none; }
+}
+
+/*================================================
+================ Navigation ======================
+================================================*/
+
+nav {
+    display: flex;
+    align-items: flex-end;
+}
+
+/*A corriger !*/
+nav .ul {
+    display: flex;
+    justify-content: space-between;
+
+    list-style-type: none;
+}
+
+nav li {
+    background: rgba(247, 0, 0, 0.4);
+    padding: 10px; margin: 0 10px;
+    cursor: pointer;
+}
+
+nav li:hover {
+    background: rgba(247, 0, 0, 0.7);
+    box-shadow: 2px 2px 8px black;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+/*================================================
+===================== Body =======================
+================================================*/
+
+#body {
+    background: rgba(0, 35, 25, 0.5);
+    box-shadow: 2px 5px 15px black;
+    max-width: 1400px; 
+    margin: 230px auto 0;
+}
+
+#content {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*A corriger !*/
+section { padding: 25px; }
+#content > .main { width: 74.5%; }
+#content > .second { width: 24.5%; }
+
+@media all and (max-width: 1400px) {
+    #content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    /*A corriger !*/
+    #content > .main { width: 95%; }
+    #content > .second { width: 95%; }
+}
+
+
+/*================================================
+================= Articles =======================
+================================================*/
+
+article {
+    background-color: white;
+    border-top: 5px solid rgb(255, 217, 68);
+    box-shadow: 10px 5px 15px black;
+}
+
+article h1 {
+    color: rgb(124, 0, 0);
+    border-bottom: 2px solid rgb(65, 65, 65);
+    font-size: 1.3em; 
+    margin: 0px; padding: 10px;
+}
+
+article h2 {
+    color: rgb(124, 0, 0);
+    font-size: 1.1em; 
+    padding-left: 20px;
+    padding-top: 5px;
+    margin-bottom: 0px;
+}
+
+article p {
+    margin-top: 0px;
+    padding-left: 25px;
+    padding-bottom: 15px;
+    padding-top: 5px;
+}
+
+article > .content {
+    background-color: rgb(246, 246, 246);
+   
+    display: flex;
+    justify-content: space-between;
+}
+
+article .main, article .second { width: 50%; }
+
+@media all and (max-width: 1100px) {
+    article > .content {  
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    article .main, article .second { width: 100%; }
+}
+
+/*================================================
+=============== Mini section =====================
+================================================*/
+
+#livre-or, #calendrier {
+    padding: 15px;
+    margin-top: 20px;
+}
+
+#livre-or > h1, #calendrier > h1 {
+    color: white;
+    font-size: 1.3em;
+    text-align: center;
+}
+
+@media all and (max-width: 1400px) {
+    section[class="second"] {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    #livre-or, #calendrier { 
+        box-shadow: 10px 5px 15px black; 
+        width: 49.5%;
+        margin-right: 1%;
+    }
+}
+
+@media all and (max-width: 700px) {
+    section[class="second"]  {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #livre-or, #calendrier { width: 90%; }
+}
+
+/*================================================
+==================== Joints ======================
+================================================*/
+
+section[class="second"] .joint { 
+    position: relative;
+    bottom: 22px; height: 50px;
+    box-shadow: 0px 10px 10px black;
+}
+
+#jointA { transform: skewY(-3deg); }
+#jointB { transform: skewY(3deg); }
+
+@media all and (max-width: 1400px) {
+    #jointB, #jointA { display: none; }
+}
+
+/*================================================
+================== Livre d'or ====================
+================================================*/
+
+#livre-or { transform: skewY(5deg); }
+#livre-or, #jointA { background-color: rgb(180, 0, 0); }
+
+/*================================================
+================== Calendrier ====================
+================================================*/
+
+/*A corriger !*/
+#calendrier { height: 70px; transform: skewY(-3deg); }
+#calendrier, #jointB { background-color: rgb(0, 139, 255); }
+
+@media all and (max-width: 1400px) {
+    #calendrier, #livre-or { transform: skewY(0deg); }
+} 
+
+/*================================================
+=================== Footer =======================
+================================================*/
+
+footer {
+    margin-top: 0px;
+    background-color: rgb(65, 65, 65);
+    height: 100px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer span, footer a {
+    color: white;
+    font-size: 12px;
+}

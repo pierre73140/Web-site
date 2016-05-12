@@ -1,0 +1,38 @@
+#carrousel {
+	width: 1000px; height: 400px;
+	overflow: hidden;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#carrousel:hover { overflow: visible; }
+
+#allPlan {
+	width: 400px; height: 300px;
+
+	perspective: 800px;
+	perspective-origin: center;
+}
+
+.plan {
+	position: absolute;
+	cursor: pointer;
+}
+
+.plan > img:hover {
+	box-shadow: 10px 5px 15px black;
+}
+
+#allPlan > .p1 { z-index: 75; transform: translateZ(67px); }
+#allPlan > .p2 { z-index: 50; transform: translate3d(-387px, 0px, 0px) rotateY(-20deg); }
+#allPlan > .p3 { z-index: 25; transform: translate3d(387px, 0px, 0px)  rotateY(20deg); }
+
+#allPlan > .p2:hover { transform: translate3d(-400px, 0px, 67px) rotateY(0deg); }
+#allPlan > .p3:hover { transform: translate3d(400px, 0px, 67px)  rotateY(0deg); }
+
+@media all and (max-width: 1400px) {
+	#allPlan {display: none;}
+	#carrousel {margin-bottom: -450px}
+}
